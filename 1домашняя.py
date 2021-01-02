@@ -135,15 +135,15 @@ def generate_level(level):
     # вернем игрока, а также размер поля в клетках
     return new_player, x, y
 try:
+    all_sprites = pygame.sprite.Group()
+    tiles_group = pygame.sprite.Group()
+    player_group = pygame.sprite.Group()
     player, level_x, level_y = generate_level(load_level(input()))
     start_screen()
     screen = pygame.display.set_mode(SIZE)
     clock = pygame.time.Clock()
     running = True
     player = None
-    all_sprites = pygame.sprite.Group()
-    tiles_group = pygame.sprite.Group()
-    player_group = pygame.sprite.Group()
     screen.fill((0, 0, 0))
     while True:
         for event in pygame.event.get():
